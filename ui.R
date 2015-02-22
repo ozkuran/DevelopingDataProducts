@@ -1,5 +1,6 @@
 library(shiny)
 library(rCharts)
+require(markdown)
 
 shinyUI(
   pageWithSidebar(
@@ -19,11 +20,14 @@ shinyUI(
   ),
   mainPanel(
     tabsetPanel(
-      tabPanel('data',
+      tabPanel('Data Page',
                verbatimTextOutput("summary"),
                dataTableOutput("cars")
                
-               )
+               ),
+      tabPanel('User Manual',
+               mainPanel(
+                 includeMarkdown("usermanual.md")))
     )
   )
 ))
