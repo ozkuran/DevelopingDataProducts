@@ -16,7 +16,13 @@ shinyUI(
                 "Horse Power:", 
                 min = 0, 
                 max = 1200, 
-                value = c(0, 1200))
+                value = c(0, 1200)),
+    sliderInput("cylinder", 
+                "Cylinder:", 
+                step = 1,
+                min = 0, 
+                max = 24, 
+                value = c(0, 24))
   ),
   mainPanel(
     tabsetPanel(
